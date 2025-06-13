@@ -1,9 +1,8 @@
 # dvr
 Repositório criado para gravação de uma camera IP instalada em uma residência.
-
 ## Ambiente
 É importante salientar que para o projeto funcionar, deve-se criar um arquivo `.env` na raiz do projeto. Nele estaram todos as informações **"Hardcode"** como o IP da camera, o chat_id e o token do telegram (caso queria usar esse serviço).
-O nome das variaveis são:
+O nome das variáveis são:
 ```
 RTSP_URL='[URL RTSP DA CAMERA]'
 TELEGRAM_CHAT_ID='[CHAT ID FORNECIDO PELO BOT DO TELEGRAM]'
