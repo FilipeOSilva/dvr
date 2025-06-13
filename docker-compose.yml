@@ -1,0 +1,8 @@
+services:
+  dvr-service:
+    build: .
+    container_name: dvrServer
+    volumes:
+      - ./data:/app/record
+    network_mode: "host" 
+    restart: always
