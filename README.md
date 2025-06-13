@@ -14,7 +14,3 @@ Para ajustar o código:
 ```
 task format
 ```
-Para testar o código:
-```
-task test
-```
