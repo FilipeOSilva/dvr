@@ -7,7 +7,7 @@ from path_file import dir_path
 from video_recorder import VideoRecorder
 
 MAX_DELAY = 15
-MIN_MOVIMENT = 1000
+MIN_MOVIMENT = 10000
 
 
 class MotionDetector:
@@ -73,6 +73,9 @@ class MotionDetector:
 
         try:
             ret, frame = cap.read()
+            if not ret:
+                raise Exception('Erro em caputar frame!')
+
             self._old_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             self._old_frame = cv2.GaussianBlur(self._old_frame, (21, 21), 0)
 
@@ -97,7 +100,7 @@ class MotionDetector:
 
                 cv2.waitKey(1)
 
-        except Exception:
-            print('Gravação encerrada pelo usuário.')
+        except Exception as e:
+            print(f"Motivo da parada: {e}")
 
         cap.release()
