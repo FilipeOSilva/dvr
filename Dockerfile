@@ -12,7 +12,5 @@ RUN pip install poetry
 
 RUN poetry config installer.max-workers 10
 RUN poetry install --no-interaction --no-ansi --without dev
-RUN poetry run pip uninstall ffmpeg ffmpeg-python -y
-RUN poetry run pip install ffmpeg-python
 
 CMD ["poetry", "run", "python", "dvr/app.py"]
